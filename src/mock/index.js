@@ -2,7 +2,7 @@ import { setupWorker } from "msw/browser";
 import { HttpResponse, http } from "msw";
 import { heroes } from "./data-heroes";
 
-const baseMockURL = "http://api.heroes.mock.org";
+export const baseMockURL = "http://api.heroes.mock.org";
 
 const handleHeroesList = http.get(`${baseMockURL}/characters`, () => {
   return HttpResponse.json(heroes);
