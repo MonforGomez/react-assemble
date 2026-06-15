@@ -12,7 +12,7 @@ worker
     createRoot(document.getElementById("root")).render(
       <StrictMode>
         <BrowserRouter>
-          <App />
+          <App/>
         </BrowserRouter>
       </StrictMode>,
     );
