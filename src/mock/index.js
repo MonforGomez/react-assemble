@@ -8,9 +8,10 @@ const handleHeroesList = http.get(`${baseMockURL}/characters`, () => {
   return HttpResponse.json(heroes);
 });
 const handleCharacter = http.get(
-  `${baseMockURL}/characters/:id`,
+  `${baseMockURL}/characters/:slug`,
   ({ params }) => {
-    const hero = heroes.find((h) => h.id === Number(params.id));
+    const heroId = params.slug.split("-")[0];
+    const hero = heroes.find((h) => h.id === Number(heroId));
     if (!hero) return new HttpResponse(null, { status: 404 });
     return HttpResponse.json(hero);
   },

@@ -1,6 +1,6 @@
-import { PageLayout } from "../components/layout";
-import jumboBG from "../assets/jumbotron-img.png"   //src/assets/jumbotron-img.png
-import { HeroesList } from "../components/heroes";
+import { PageLayout } from "../../components/layout/index";
+import jumboBG from "../../assets/jumbotron-img.png"   //src/assets/jumbotron-img.png
+
 
 function HomePage() {
   return (
@@ -13,8 +13,6 @@ function HomePage() {
         }}
       >
         <h1>Bienvenidos a nuestra pagina de Marvel</h1>
-        <h3>Heroes List</h3>
-        <HeroesList/>
       </PageLayout>
       
     </>
