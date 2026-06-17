@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router";
 import { worker } from "./mock/index.js";
 
 worker
-  .start({ onUnhandledRequest: "warn" })
+  .start({ onUnhandledRequest: "bypass", })
   .then(() => {
     createRoot(document.getElementById("root")).render(
       <StrictMode>
