@@ -3,8 +3,9 @@ import { Link } from "react-router";
 function MoviesCard({ movie: { title, id, poster, rating } }) {
 
   const getRatingColor = (score) => {
-    if (score >= 4) return "bg-success border-success";
-    if (score >= 3) return "bg-warning  border-warning";
+    if (score >= 8) return "bg-success border-success";
+    if (score >= 7) return "bg-warning  border-warning";
+    if (score >= 6.5) return "bg-info border light";
     return "bg-danger border-danger";
   };
 

@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 
 function GamesCard({ game: { name, id, picture, rating } }) {
-
   const getRatingColor = (score) => {
     if (score >= 4) return "bg-success border-success";
     if (score >= 3) return "bg-warning  border-warning";
@@ -29,7 +28,7 @@ function GamesCard({ game: { name, id, picture, rating } }) {
             }}
           >
             <span className="text-light">★</span>
-            { roundedRating } 
+            {roundedRating}
           </span>
         )}
       </div>
