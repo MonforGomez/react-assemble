@@ -19,15 +19,26 @@ function parseGame(game) {
 }
 
 export async function listGames() {
-  const { data } = await http.get("/games", {
-    params: {
-      search: "marvel",
-    },
-  });
-  return data.results?.map((game) => parseGame(game));
+  const [page1, page2, page3, page4, page5] = await Promise.all([
+    http.get("/games", {params: { search: "marvel", page: 1, page_size: 40 }}),
+    http.get("/games", {params: { search: "marvel", page: 2, page_size: 40 }}),
+    http.get("/games", {params: { search: "marvel", page: 3, page_size: 40 }}),
+    http.get("/games", {params: { search: "marvel", page: 4, page_size: 40 }}),
+    http.get("/games", {params: { search: "marvel", page: 5, page_size: 40 }}),  
+  ]);
+  
+  const allResults = [
+    ...(page1.data.results) || [],
+    ...(page2.data.results) || [],
+    ...(page3.data.results) || [],
+    ...(page4.data.results) || [],
+    ...(page5.data.results) || []
+  ]
+    
+  return allResults.map((game) => parseGame(game));
 }
 
-export async function detailGame(id) {
-    const { data } = await http.get(`/games/${id}`)
+export async function detailGame(slug) {
+    const { data } = await http.get(`/games/${slug}`)
     return parseGame(data); 
 }

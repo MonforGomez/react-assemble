@@ -1,29 +1,29 @@
 import { PageLayout } from "../../components/layout";
-import jumboBG3 from "../../assets/jumbotron-games.jpeg"; //src/assets/jumbotron-img.png
-import gameslist from "../../assets/games-list-logo.png";
-import { GamesList } from "../../components/games";
+import jumboBG4 from "../../assets/jumbotron-movies.jpg";
+import movieslist from "../../assets/movies-list-logo.png";
+import { MoviesList } from "../../components/movies";
 
-function GamesPage() {
+function MoviesPage() {
   return (
     <PageLayout
       jumbotron={{
-        background: jumboBG3,
+        background: jumboBG4,
         title: "REACT ASSEMBLE",
         subtitle:
-          "The ultimate Marvel crossover: PRESS START TO FIGHT!",
+          "Movies of Marvel. I LOVE YOU 3000.",
       }}
     >
       <div className="d-flex justify-content-center align-items-center">
         <img
-          src={gameslist}
+          src={movieslist}
           className="img-fluid"
           alt="Heroes List Logo"
           style={{ height: "150px", width: "auto" }}
         />
       </div>
-      <GamesList />
+      <MoviesList />
     </PageLayout>
   );
 }
 
-export default GamesPage;
+export default MoviesPage;
