@@ -10,7 +10,7 @@ function GamesPage() {
         background: jumboBG3,
         title: "REACT ASSEMBLE",
         subtitle:
-          "Assemble Earth's mightiest heroes into a single ultimate database.",
+          "The ultimate Marvel crossover: PRESS START TO FIGHT!",
       }}
     >
       <div className="d-flex justify-content-center align-items-center">
