@@ -52,7 +52,6 @@ function MoviesCard({ movie: { title, id, poster, rating } }) {
         <h6 className="card-title m-0 fw-black text-uppercase tracking-wide text-white text-shadow-sm fs-5">
           {title}
         </h6>
-
       </div>
     </Link>
   );

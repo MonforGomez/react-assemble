@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import ImgNotFound from "../../../assets/default-img-notfound.png";
 
 function GamesCard({ game: { name, id, picture, rating } }) {
   const getRatingColor = (score) => {
@@ -34,7 +35,12 @@ function GamesCard({ game: { name, id, picture, rating } }) {
       </div>
 
       <img
-        src={picture}
+        src={picture || ImgNotFound}
+        onError={(e) => {
+          console.error("Error cargando imagen");
+          e.target.src = ImgNotFound;
+        }}
+
         className="card-img w-100 h-100 object-fit-cover"
         alt={name}
         style={{ minHeight: "300px" }}

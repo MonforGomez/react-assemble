@@ -25,12 +25,11 @@ function HomePage() {
           <div className="row justify-content-center">
             <div className="col-md-8">
               {" "}
-              {/* Controla el ancho máximo del video */}
               <h4 className="text-center mb-2 fw-bold">X-men 97 Season 2</h4>
-              {/* Contenedor responsivo 16:9 */}
+              
               <div className="ratio ratio-16x9 shadow rounded overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/watch?v=mfUtseK27pc"
+                  src="https://www.youtube.com/embed/mfUtseK27pc"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -39,13 +38,13 @@ function HomePage() {
             </div>
             <div className="col-md-8 mt-4">
               <h4 className="text-center mb-2 fw-bold">
-                Spiderman: Brand New Day
+                Spider-man: Brand New Day
               </h4>
 
-              {/* Contenedor responsivo 16:9 */}
+             
               <div className="ratio ratio-16x9 shadow rounded overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/watch?v=6TnbSI4yfZY"
+                  src="https://www.youtube.com/embed/6TnbSI4yfZY"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
