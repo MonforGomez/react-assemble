@@ -15,23 +15,8 @@ function parseGame(game) {
     picture: game.background_image,
     rating: game.rating,
     genres: game.genre,
-    platforms: game.platforms ? game.platforms.map(p => p.platform.name).join(", ") : "Unknown Platform"
   };
 }
-
-/*
-return {
-    id: game.id,
-    slug: game.slug,
-    name: game.name,
-    picture: game.background_image,
-    rating: game.rating,
-    genres: game.genres,
-    
-    // Mapea el array, extrae los nombres y los junta con una coma
-    platform: game.platforms  ? game.platforms.map(p => p.platform.name).join(", ")  : "Unknown Platform"
-  };
-*/
 
 export async function listGames() {
   const [page1, page2, page3, page4, page5] = await Promise.all([
