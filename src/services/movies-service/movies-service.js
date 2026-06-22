@@ -20,25 +20,19 @@ function parseMovie(movie) {
   };
 }
 
-export async function listMovies() {
-  //como TMDB exporta solo 20 peliculas por pagina, y hay 38 peliculas de marvel, se hace una peticion get por cada pagina, con un promise.all
-  const [page1, page2] = await Promise.all([
-    http.get("/discover/movie", { params: { with_companies: "420", page: 1 } }),
-    http.get("/discover/movie", { params: { with_companies: "420", page: 2 } }),
-  ]);
 
-  // Juntamos los resultados de ambas páginas en un solo array
-  const allResults = [...page1.data.results, ...page2.data.results];
-  // y de ese array, creamos una constante que recoja todas las peliculas con nuestra funcion parsemovie para recoger los datos que hemos querido
-  const parsedMovies = allResults.map((movie) => parseMovie(movie));
+export async function ListMovies(page = 1) {
+  
+  const { data } = await http.get("/discover/movie", { params: { with_companies: "420", page: page } });
+ 
+  const parsedMovies = data.results.map((movie) => parseMovie(movie));
 
-  // Y ordenamos con .sort en funcion de su fecha de estreno
   return parsedMovies.sort(
     (a, b) => new Date(a.releaseDate) - new Date(b.releaseDate),
   );
 }
 
 export async function detailMovie(id) {
-  const { data } = await http.get(`/discover/movie/${id}`);
+  const { data } = await http.get(`/movie/${id}`);
   return parseMovie(data);
 }
