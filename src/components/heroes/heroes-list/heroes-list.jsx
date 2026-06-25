@@ -9,6 +9,7 @@ function HeroesList(className = "") {
     async function fetchHeroes() {
       try {
         const heroes = await HeroService.getAllCharacters();
+        console.log("heroes:", heroes.length)
         setHeroes(heroes);
       } catch (error) {
         console.error("No se han encontrado heroes", error);
