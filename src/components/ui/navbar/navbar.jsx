@@ -1,5 +1,5 @@
 import marvelLogo from "../../../assets/marvel-logo.png";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 function NavBar() {
   return (
@@ -58,12 +58,12 @@ function NavBar() {
           </NavLink>
 
           {/*búsqueda, al pulsar la lupa te redirige al buscador*/}
-          <div
+          <Link to="/search"
             className="d-flex align-items-center gap-3 text-white"
             style={{ minWidth: "160px", justifyContent: "flex-end" }}
           >
             <i className="bi bi-search fs-5"></i>
-          </div>
+          </Link>
         </div>
       </nav>
 

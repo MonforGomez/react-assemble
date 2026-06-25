@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router";
 import { NavBar } from "./components/ui";
-import { HomePage, HeroesPage, HeroeDetailPage, GamesPage, GamesDetailPage, MoviesPage, MoviesDetailPage, LoginPage, RegisterPage } from "./pages/index.jsx";
-import RegisterForm from "./components/auth/register-form/register-form.jsx";
+import { HomePage, HeroesPage, HeroeDetailPage, GamesPage, GamesDetailPage, MoviesPage, MoviesDetailPage, SearchPage } from "./pages/index.jsx";
 
 
 function App() {
@@ -16,9 +15,7 @@ function App() {
       <Route path="/games/:slug" element={<GamesDetailPage/>}/>
       <Route path="/movies" element={<MoviesPage/>}/>
       <Route path="/movies/:id" element={<MoviesDetailPage/>}/>
-      <Route path="/register" element={<RegisterPage/>}/>
-      <Route path="/login" element={<LoginPage/>}/>
-
+      <Route path="/search" element={<SearchPage/>}/>
     </Routes>
   </>
   )
