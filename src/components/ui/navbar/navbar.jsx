@@ -13,16 +13,49 @@ function NavBar() {
             className="d-flex align-items-center gap-2 text-white"
             style={{ minWidth: "160px" }}
           >
+            <div>
+              <ul className="navbar-nav gap-3">
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link text-uppercase fw-bold small"
+                    to="/register"
+                    style={{
+                      color: "#ccc",
+                      letterSpacing: "0.05em",
+                      fontSize: "0.75rem",
+                    }}
+                  >
+                    Register
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link text-uppercase fw-bold small"
+                    to="/login"
+                    style={{
+                      color: "#ccc",
+                      letterSpacing: "0.05em",
+                      fontSize: "0.75rem",
+                    }}
+                  >
+                    Login
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
             <i className="bi bi-person-circle fs-5"></i>
             <span className="fw-bold small text-uppercase">Ruben</span>
           </div>
 
           {/* Centro: logo Marvel */}
-         
-            <NavLink to="/">
-                <img src={marvelLogo} alt="Marvel" style={{ height: '60px', width: "auto"}}  />
-            </NavLink>
-          
+
+          <NavLink to="/">
+            <img
+              src={marvelLogo}
+              alt="Marvel"
+              style={{ height: "60px", width: "auto" }}
+            />
+          </NavLink>
 
           {/*búsqueda, al pulsar la lupa te redirige al buscador*/}
           <Link to="/search"
@@ -50,7 +83,9 @@ function NavBar() {
                   letterSpacing: "0.05em",
                   fontSize: "0.75rem",
                 }}
-              >Characters</NavLink>
+              >
+                Characters
+              </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
@@ -61,7 +96,9 @@ function NavBar() {
                   letterSpacing: "0.05em",
                   fontSize: "0.75rem",
                 }}
-              >Movies</NavLink>
+              >
+                Movies
+              </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
@@ -72,7 +109,9 @@ function NavBar() {
                   letterSpacing: "0.05em",
                   fontSize: "0.75rem",
                 }}
-              >Games</NavLink>
+              >
+                Games
+              </NavLink>
             </li>
           </ul>
         </div>
