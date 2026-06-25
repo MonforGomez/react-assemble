@@ -5,3 +5,5 @@ export { default as GamesPage } from "./games-pages/game-page";
 export { default as GamesDetailPage } from "./games-pages/game-detail-page";
 export { default as MoviesPage } from "./movies-pages/movies-page";
 export { default as MoviesDetailPage } from "./movies-pages/movies-detail-page";
+export { default as LoginPage } from "./login-page/login-page";
+export { default as RegisterPage } from "./register-page/register-page";
