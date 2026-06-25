@@ -5,6 +5,9 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router";
 import { worker } from "./mock/index.js";
+import { AuthContextProvider } from "./context/auth-context"
+
+
 
 worker
   .start({ onUnhandledRequest: "bypass", })
@@ -12,7 +15,9 @@ worker
     createRoot(document.getElementById("root")).render(
       <StrictMode>
         <BrowserRouter>
-          <App/>
+          <AuthContextProvider>
+            <App/>
+          </AuthContextProvider>
         </BrowserRouter>
       </StrictMode>,
     );
