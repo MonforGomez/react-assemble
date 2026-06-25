@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router";
 import { NavBar } from "./components/ui";
-import { HomePage, HeroesPage, HeroeDetailPage, GamesPage, GamesDetailPage, MoviesPage, MoviesDetailPage } from "./pages/index.jsx";
+import { HomePage, HeroesPage, HeroeDetailPage, GamesPage, GamesDetailPage, MoviesPage, MoviesDetailPage, SearchPage } from "./pages/index.jsx";
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
       <Route path="/games/:slug" element={<GamesDetailPage/>}/>
       <Route path="/movies" element={<MoviesPage/>}/>
       <Route path="/movies/:id" element={<MoviesDetailPage/>}/>
+      <Route path="/search" element={<SearchPage/>}/>
     </Routes>
   </>
   )

@@ -14,16 +14,20 @@ function parseGame(game) {
     name: game.name,
     picture: game.background_image,
     rating: game.rating,
-    genres: game.genre,
+    genres: game.genres,
     platforms: game.platforms ? game.platforms.map(p => p.platform.name).join(", ") : "Unknown Platform",
   };
 }
 
 
 
-export async function listGames(page = 1) {
-  const { data } = await http.get("/games", {params: { search: "marvel", page: page }}); 
-
+export async function listGames(search = "marvel", page = 1) {
+ const { data } = await http.get("/games", {
+    params: { 
+      search: search, 
+      page: page 
+    }
+  });
   const parsedGames = data.results.map((game) => parseGame(game))
 
   const pagesSize = 20
@@ -59,4 +63,9 @@ export async function detailGame(slug) {
 }
 
 
-//41fb3c23436e4c6992680ab4c81684e1
+export const searchGames = async (query) => {
+  const { data } = await http.get("/games", {
+    params: { search: query }
+  })
+  return data.results?.map(g => parseGame(g))
+}
