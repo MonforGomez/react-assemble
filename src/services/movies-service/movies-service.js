@@ -36,3 +36,10 @@ export async function detailMovie(id) {
   const { data } = await http.get(`/movie/${id}`);
   return parseMovie(data);
 }
+
+export const searchMovies = async (query) => {
+  const { data } = await http.get("/search/movie", {
+    params: { query }
+  })
+  return data.results?.map(m => parseMovie(m))
+}
