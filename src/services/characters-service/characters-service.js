@@ -21,9 +21,21 @@ function parseCharacter(character) {
   }
 };
 
-export async function getAllCharacters() {
-  const { data } = await mockURL.get("/characters");
-  return data?.map((character) => parseCharacter(character));
+export async function getAllCharacters({ page = 1 }) {
+  const { data } = await mockURL.get("/characters", {
+    params: {
+      page: page,
+    }
+  });
+
+  const parsedCharacter = data?.map((character) => parseCharacter(character));
+  const pageSize = 20; 
+  const totalPages = Math.ceil(data.count / pageSize); 
+
+  return {
+    character: parsedCharacter, 
+    totalPages: totalPages,
+  }
 };
 
 export async function getCharacter(slug) {

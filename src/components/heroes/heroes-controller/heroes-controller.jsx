@@ -1,9 +1,12 @@
+import { HeroesList } from "../index";
 import { useState, useEffect } from "react";
 import * as HeroService from "../../../services/characters-service/characters-service";
-import { HeroesList } from "../index";
+
 
 export function AllHeroesController() {
   const [heroes, setHeroes] = useState([]);
+  const [page, setPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(1); 
 
   useEffect(() => {
     async function fetchHeroes() {
@@ -11,16 +14,24 @@ export function AllHeroesController() {
         const heroes = await HeroService.getAllCharacters();
         console.log("heroes:", heroes.length);
         setHeroes(heroes);
+        setTotalPage(totalPage);
       } catch (error) {
         console.error("No se han encontrado heroes", error);
       }
     }
 
     fetchHeroes();
-  }, []);
+  }, [page]);
 
   return (
-    <HeroesList heroes={heroes}/>
+    <HeroesList 
+      heroes={heroes}
+      pages={page}
+      setPages={setPage}
+      totalPage={totalPage}
+      withPagination={true}
+
+    />
   );
 }
 
