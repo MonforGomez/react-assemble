@@ -1,30 +1,17 @@
-import { useState, useEffect } from "react";
-import * as HeroService from "../../../services/characters-service/characters-service";
 import { HeroesCard } from "../index";
 
-function HeroesList(className = "") {
-  const [heroes, setHeroes] = useState([]);
-
-  useEffect(() => {
-    async function fetchHeroes() {
-      try {
-        const heroes = await HeroService.getAllCharacters();
-        console.log("heroes:", heroes.length)
-        setHeroes(heroes);
-      } catch (error) {
-        console.error("No se han encontrado heroes", error);
-      }
-    }
-
-    fetchHeroes();
-  }, []);
+function HeroesList({ heroes }) {
   return (
-    <div className={`d-flex flex-wrap gap-2 mt-2 ${className}`}>
-      {heroes.map((hero) => (
-        <HeroesCard key={hero.id} hero={hero} />
-      ))}
-    </div>
-  );
+    <div className="container my-5">
+      <div className="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 justify-content-center">
+        {heroes?.map((hero) => (
+          <div className="col" key={hero.id}> 
+            <HeroesCard hero={hero} />
+          </div>
+        ))}
+      </div>
+    </div> 
+  ); 
 }
 
 export default HeroesList;
