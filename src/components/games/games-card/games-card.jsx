@@ -35,7 +35,7 @@ function GamesCard({ game: { name, id, picture, rating } }) {
       </div>
 
       <img
-        src={picture || ImgNotFound}
+        src={picture ?? ImgNotFound}
         onError={(e) => {
           console.error("Error cargando imagen");
           e.target.src = ImgNotFound;

@@ -21,15 +21,25 @@ function parseMovie(movie) {
 }
 
 
-export async function ListMovies(page = 1) {
-  
-  const { data } = await http.get("/discover/movie", { params: { with_companies: "420", page: page } });
+export async function ListMovies(filter = "420", page = 1) {
+  const searcher = filter || "420"; 
+
+  const { data } = await http.get("/discover/movie", { 
+    params: { 
+      with_companies: searcher, 
+      page: page } });
  
   const parsedMovies = data.results.map((movie) => parseMovie(movie));
+  const sortedMovies =parsedMovies.sort(
+    (a, b) => new Date(a.releaseDate) - new Date(b.releaseDate)); 
 
-  return parsedMovies.sort(
-    (a, b) => new Date(a.releaseDate) - new Date(b.releaseDate),
-  );
+    const pageSize = 20; 
+    const totalPages = data.total_pages || Math.ceil(data.total_results / pageSize);
+
+  return {
+    movies: sortedMovies,
+    totalPages: totalPages,
+  }
 }
 
 export async function detailMovie(id) {

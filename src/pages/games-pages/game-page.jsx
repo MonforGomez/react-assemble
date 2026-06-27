@@ -1,7 +1,7 @@
 import { PageLayout } from "../../components/layout";
 import jumboBG3 from "../../assets/jumbotron-games.jpeg"; //src/assets/jumbotron-img.png
 import gameslist from "../../assets/games-list-logo.png";
-import { GamesList } from "../../components/games";
+import { AllGamesController } from "../../components/games";
 
 function GamesPage() {
   return (
@@ -21,7 +21,7 @@ function GamesPage() {
           style={{ height: "150px", width: "auto" }}
         />
       </div>
-      <GamesList />
+      <AllGamesController />
     </PageLayout>
   );
 }
