@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import * as HeroService from "../../services/characters-service/characters-service";
 import { PageLayout } from "../../components/layout";
 import jumboBG2 from "../../assets/jumbotron-characters.jpg";
@@ -90,7 +90,7 @@ function HeroeDetailPage() {
                 - col-md-6: En tablets, ocupa la mitad del espacio disponible (6 de 12).
             */}
               <div className="col-12 col-md-6">
-                <h4 className="text-danger text-uppercase fw-bold fs-5 mb-3">
+                <h4 className="text-danger text-bg-dark text-uppercase text-center fw-bold fs-5 mb-3 p-2">
                   Detalles Básicos
                 </h4>
 
@@ -186,7 +186,7 @@ function HeroeDetailPage() {
               <div className="col-12 col-md-6">
                 {Object.keys(stats).length > 0 && (
                   <div>
-                    <h4 className="text-danger text-uppercase fw-bold fs-5 mb-3">
+                    <h4 className="text-danger text-bg-dark text-uppercase text-center fw-bold fs-5 mb-3 p-2">
                       Estadísticas de Poder
                     </h4>
                     <div className="bg-dark p-3 border border-secondary rounded shadow">
@@ -221,6 +221,14 @@ function HeroeDetailPage() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="text-center mt-4">
+          <Link
+            to="/characters"
+            className="btn btn-secondary align-items-center px-4"
+          >
+            <strong>Volver a Personajes</strong>
+          </Link>
         </div>
       </div>
     </PageLayout>

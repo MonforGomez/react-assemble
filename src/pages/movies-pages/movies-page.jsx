@@ -1,7 +1,7 @@
 import { PageLayout } from "../../components/layout";
 import jumboBG4 from "../../assets/jumbotron-movies.jpg";
 import movieslist from "../../assets/movies-list-logo.png";
-import { MoviesList } from "../../components/movies";
+import { AllMoviesController } from "../../components/movies";
 
 function MoviesPage() {
   return (
@@ -21,7 +21,7 @@ function MoviesPage() {
           style={{ height: "150px", width: "auto" }}
         />
       </div>
-      <MoviesList />
+      <AllMoviesController />
     </PageLayout>
   );
 }
