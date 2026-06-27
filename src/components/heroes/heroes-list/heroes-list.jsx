@@ -1,13 +1,18 @@
 import { HeroesCard } from "../index";
 import Pagination from "../../pagination/pagination";
 
-function HeroesList({ heroes, pages, setPages, totalPage, withPagination = false }) {
-  
+function HeroesList({
+  heroes,
+  pages,
+  setPages,
+  totalPage,
+  withPagination = false,
+}) {
   return (
     <div className="container my-5">
       <div className="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 justify-content-center">
         {heroes?.map((hero) => (
-          <div className="col" key={hero.id}> 
+          <div className="col" key={hero.id}>
             <HeroesCard hero={hero} />
           </div>
         ))}
@@ -17,11 +22,11 @@ function HeroesList({ heroes, pages, setPages, totalPage, withPagination = false
           page={pages}
           totalPage={totalPage}
           onPrev={() => setPages((prev) => prev - 1)}
-          onNext={() => setPages((prev) => prev + 1)} 
+          onNext={() => setPages((prev) => prev + 1)}
         />
       )}
-    </div> 
-  ); 
+    </div>
+  );
 }
 
 export default HeroesList;
