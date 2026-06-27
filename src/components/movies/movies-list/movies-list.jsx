@@ -1,4 +1,3 @@
-
 import { MoviesCard } from "../index";
 import Pagination from "../../pagination/pagination";
 

@@ -24,32 +24,31 @@ function parseMovie(movie) {
 export async function ListMovies(filter = "420", page = 1) {
   const searcher = filter || "420"; 
 
-  const { data } = await http.get("/discover/movie", { 
+  const { data : movies } = await http.get("/discover/movie", { 
     params: { 
       with_companies: searcher, 
       page: page } });
  
-  const parsedMovies = data.results.map((movie) => parseMovie(movie));
+  const parsedMovies = movies.results.map((movie) => parseMovie(movie));
   const sortedMovies =parsedMovies.sort(
     (a, b) => new Date(a.releaseDate) - new Date(b.releaseDate)); 
 
-    const pageSize = 20; 
-    const totalPages = data.total_pages || Math.ceil(data.total_results / pageSize);
+  
 
   return {
     movies: sortedMovies,
-    totalPages: totalPages,
+    totalPage: movies.total_pages,
   }
 }
 
 export async function detailMovie(id) {
-  const { data } = await http.get(`/movie/${id}`);
-  return parseMovie(data);
+  const { data : movies } = await http.get(`/movie/${id}`);
+  return parseMovie(movies);
 }
 
 export const searchMovies = async (query) => {
-  const { data } = await http.get("/search/movie", {
+  const { data : movies } = await http.get("/search/movie", {
     params: { query }
   })
-  return data.results?.map(m => parseMovie(m))
+  return movies.results?.map(m => parseMovie(m))
 }

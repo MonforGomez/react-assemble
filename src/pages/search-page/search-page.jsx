@@ -1,4 +1,4 @@
-import Finder from "../../components/finder/finder"; // Importas tu componente
+import Finder from "../../components/finder/finder";
 
 function SearchPage() {
   return (

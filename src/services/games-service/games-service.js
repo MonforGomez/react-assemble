@@ -22,16 +22,16 @@ function parseGame(game) {
 export async function listGames({search = "marvel", page = 1}) {
   const searcher = search || "marvel"; 
  
-  const { data } = await http.get("/games", {
+  const { data : games } = await http.get("/games", {
     params: { 
       search: searcher, 
       page: page 
     }
   });
-  const parsedGames = data.results.map((game) => parseGame(game))
+  const parsedGames = games.results.map((game) => parseGame(game))
 
   const pagesSize = 20
-  const totalPages = Math.ceil(data.count / pagesSize)
+  const totalPages = Math.ceil(games.count / pagesSize)
   return {
     games: parsedGames,
     totalPages: totalPages,
@@ -39,14 +39,14 @@ export async function listGames({search = "marvel", page = 1}) {
 }
 
 export async function detailGame(slug) {
-    const { data } = await http.get(`/games/${slug}`)
-    return parseGame(data); 
+    const { data : games} = await http.get(`/games/${slug}`)
+    return parseGame(games); 
 }
 
 
 export const searchGames = async (query) => {
-  const { data } = await http.get("/games", {
+  const { data : games } = await http.get("/games", {
     params: { search: query }
   })
-  return data.results?.map(g => parseGame(g))
+  return games.results?.map(g => parseGame(g))
 }
