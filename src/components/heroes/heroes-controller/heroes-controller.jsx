@@ -4,17 +4,20 @@ import * as HeroService from "../../../services/characters-service/characters-se
 import Loader from "../../ui/loader/loader";
 
 export function AllHeroesController() {
-  const [heroes, setHeroes] = useState([]);
+  const [heroes, setHeroes] = useState();
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
 
   useEffect(() => {
     async function fetchHeroes() {
       try {
-        const characters = await HeroService.getAllCharacters({ page: page });
-        console.log("heroes:", heroes.length);
-        setHeroes(characters.character);
-        setTotalPage(characters.totalPage);
+        const { character, totalPages } = await HeroService.getAllCharacters({
+          page: page,
+        });
+        setTimeout(() => {
+          setHeroes(character);
+          setTotalPage(totalPages);
+        }, 5_000);
       } catch (error) {
         console.error("No se han encontrado heroes", error);
       }

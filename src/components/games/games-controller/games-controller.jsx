@@ -14,10 +14,10 @@ export function AllGamesController() {
         const { games, totalPages } = await GameService.listGames({
           page: page,
         });
-        //setTimeout(() => {
+        setTimeout(() => {
           setGames(games);
           setTotalPage(totalPages);
-        //}, 5_000);
+        }, 5_000);
       } catch (error) {
         console.error("No se han encontrado juegos", error);
       }
