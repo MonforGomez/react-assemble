@@ -2,7 +2,6 @@
 
 > Tu portal Marvel definitivo: héroes, películas y videojuegos en un solo lugar.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/react-assemble/deploy-status)](https://react-assemble.netlify.app)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?logo=bootstrap&logoColor=white)
@@ -138,10 +137,10 @@ Puedes obtener las keys en:
 
 
 ```md
-![Personajes](../react-assemble/src/assets/screenshot-characters.PNG)
-![Películas](../react-assemble/src/assets/screenshot-movies.PNG)
-![Juegos](../react-assemble/src/assets/screenshot-games.PNG)
-![Searcher](../react-assemble/src/assets/screenshot-searcher.PNG)
+![Personajes](./src/assets/screenshot-characters.PNG)
+![Películas](./src/assets/screenshot-movies.PNG)
+![Juegos](./src/assets/screenshot-games.PNG)
+![Searcher](./src/assets/screenshot-searcher.PNG)
 ```
 
 ---
