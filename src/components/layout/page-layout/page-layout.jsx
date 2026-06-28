@@ -1,4 +1,4 @@
-import { Jumbotron } from "../../ui";
+import { Footer, Jumbotron } from "../../ui";
 
 
 
@@ -9,6 +9,7 @@ function PageLayout({ children, jumbotron, className = "" }) {
       <div className={`container py-3 ${className}`}>
         {children}
       </div>
+      <Footer />
     </>
   );
 }

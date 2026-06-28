@@ -4,7 +4,6 @@ import { HeroesList } from "../heroes/index";
 import { GamesList } from "../games/index";
 import { MoviesList } from "../movies/index";
 
-
 function SearchPage() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState(null);
@@ -37,15 +36,11 @@ function SearchPage() {
 
       {results && (
         <>
-          <h4>Personajes ({results.characters.length})</h4>
-          <HeroesList heroes={results.characters} />
+          <HeroesList heroes={results.characters} title={"Heroes"} />
 
-          <h4>Películas ({results.movies.length})</h4>
-          <MoviesList movies={results.movies} />
+          <MoviesList movies={results.movies} title={"Peliculas"} />
 
-          <h4>Juegos ({results.games.length})</h4>
-          <GamesList games={results.games} />
-
+          <GamesList games={results.games} title={"Juegos"} />
         </>
       )}
     </div>
