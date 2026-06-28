@@ -2,6 +2,7 @@ import { PageLayout } from "../../components/layout/index";
 import jumboBG from "../../assets/jumbotron-img.png";
 import comingSoon from "../../assets/coming-soon-logo.png";
 
+
 function HomePage() {
   const marvelTextShadow = {
     textShadow:
