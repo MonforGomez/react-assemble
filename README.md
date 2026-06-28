@@ -137,10 +137,10 @@ Puedes obtener las keys en:
 
 
 ```md
-![Personajes](./src/assets/screenshot-characters.PNG)
-![Películas](./src/assets/screenshot-movies.PNG)
-![Juegos](./src/assets/screenshot-games.PNG)
-![Searcher](./src/assets/screenshot-searcher.PNG)
+![Personajes](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-characters.PNG)
+![Películas](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-movies.PNG)
+![Juegos](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-games.PNG)
+![Searcher](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-searcher.PNG)
 ```
 
 ---
