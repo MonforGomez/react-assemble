@@ -135,13 +135,11 @@ Puedes obtener las keys en:
 ## 📸 Capturas de pantalla
 
 
-
-```md
 ![Personajes](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-characters.PNG)
 ![Películas](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-movies.PNG)
 ![Juegos](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-games.PNG)
 ![Searcher](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-searcher.PNG)
-```
+
 
 ---
 
