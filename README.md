@@ -134,13 +134,14 @@ Puedes obtener las keys en:
 
 ## 📸 Capturas de pantalla
 
-
-![Personajes](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-characters.PNG)
-![Películas](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-movies.PNG)
-![Juegos](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-games.PNG)
-![Searcher](https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-searcher.PNG)
-
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-characters.PNG" width="45%" alt="Personajes" />
+  <img src="https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-movies.PNG" width="45%" alt="Películas" />
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-games.PNG" width="45%" alt="Juegos" />
+  <img src="https://raw.githubusercontent.com/MonforGomez/react-assemble/main/src/assets/screenshot-searcher.PNG" width="45%" alt="Buscador" />
+</p>
 ---
 
 ## 👥 Contribuidores
