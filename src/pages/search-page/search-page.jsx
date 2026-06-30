@@ -1,9 +1,8 @@
-import Finder from "../../components/finder/finder"; // Importas tu componente
+import Finder from "../../components/finder/finder";
 
 function SearchPage() {
   return (
     <div className="search-page-container">
-      {/* Solo llamas al Finder, que ya se encarga de toda la movida */}
       <Finder />
     </div>
   );

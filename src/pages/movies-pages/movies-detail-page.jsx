@@ -4,10 +4,9 @@ import * as MovieService from "../../services/movies-service/movies-service";
 import jumboBG4 from "../../assets/jumbotron-movies.jpg";
 import { PageLayout } from "../../components/layout";
 
-
 function MoviesDetailPage() {
-  const { id } = useParams(); 
-  const [movie, setMovie] = useState(); 
+  const { id } = useParams();
+  const [movie, setMovie] = useState();
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -15,12 +14,12 @@ function MoviesDetailPage() {
         const movie = await MovieService.detailMovie(id);
         setMovie(movie);
       } catch (error) {
-        console.error ("Error al cargar pelicula" , error)
+        console.error("Error al cargar pelicula", error);
       }
     };
     fetchMovie();
-  }, [id])
-  
+  }, [id]);
+
   if (!movie) {
     return (
       <PageLayout
@@ -37,40 +36,51 @@ function MoviesDetailPage() {
   }
   return (
     <PageLayout
-       style={{ backgroundColor: "blue" }}
-        jumbotron={{
-          background: jumboBG4,
-          title: "REACT ASSEMBLE",
-          subtitle: "Movies of Marvel. I LOVE YOU 3000.",
+      style={{ backgroundColor: "blue" }}
+      jumbotron={{
+        background: jumboBG4,
+        title: "REACT ASSEMBLE",
+        subtitle: "Movies of Marvel. I LOVE YOU 3000.",
       }}
     >
- <div className="container my-5">
-      <div className="row g-4">
-    
-        <div className="col-md-4">
-          <img
-            src={movie.poster}
-            alt={movie.title}
-            className="img-fluid rounded shadow"
-          />
-        </div>
-
-        <div className="col-md-8 d-flex flex-column justify-content-center">
-          <h1 className="fw-bold">{movie.title}</h1>
-
-          <div className="d-flex gap-3 my-3">
-            <span className="badge bg-warning text-dark fs-6">
-              ⭐ {movie.rating.toFixed(1)}
-            </span>
-            <span className="badge bg-secondary fs-6">
-              📅 {movie.releaseDate}
-            </span>
+      <div className="container my-5">
+        <div className="row g-4">
+          <div className="col-md-4">
+            <img
+              src={movie.poster}
+              alt={movie.title}
+              className="img-fluid rounded shadow"
+            />
           </div>
 
-          <p className="text-muted">{movie.overview}</p>
+          <div className="col-md-8 d-flex flex-column justify-content-center">
+            <h1 className="fw-bold" >{movie.title}</h1>
+
+            <div className="d-flex gap-3 my-3">
+              <span className="badge bg-warning text-dark fs-6">
+                ⭐ {movie.rating.toFixed(1)}
+              </span>
+              <span className="badge bg-secondary fs-6">
+                📅 {movie.releaseDate}
+              </span>
+            </div>
+
+            <p
+              className="lead"
+              style={{
+                color: "#f0f0f0",
+                backgroundColor: "rgba(0, 0, 0, 0.75)",
+                borderRadius: "8px",
+                padding: "1rem 1.25rem",
+                lineHeight: "1.7",
+                backdropFilter: "blur(4px)",
+              }}
+            >
+              {movie.overview}
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="text-center mt-4">
+        <div className="text-center mt-4">
           <Link
             to="/movies"
             className="btn btn-secondary align-items-center px-4"
@@ -78,9 +88,8 @@ function MoviesDetailPage() {
             <strong>Volver a Peliculas</strong>
           </Link>
         </div>
-    </div>
+      </div>
     </PageLayout>
-
   );
 }
 
